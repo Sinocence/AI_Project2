@@ -5,7 +5,7 @@ public class Driver {
 		OthelloBoard b1 = new OthelloBoard();
 		b1.PrintBoard();
 		b1.ShowPossibleMoves();
-		b1.PlaceTile(1, 1);
+		b1.PlaceTile(3, 2);
 		
 	}
 
