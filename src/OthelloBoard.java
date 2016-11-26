@@ -20,7 +20,7 @@ public class OthelloBoard {
 	
 	//returns cell of a board position
 	public OthelloCell GetCell(int row, int col){
-		return board[row][col];
+		return board[col][row];
 	}
 	
 	public void SetTurnWhite(){
@@ -47,10 +47,10 @@ public class OthelloBoard {
 	public void PlaceTile(int row, int col){
 	
 		if(IsLegalMove(row, col) && isBlackTurn){
-			board[row][col] = OthelloCell.BLACK;
+			board[col][row] = OthelloCell.BLACK;
 			SetTurnWhite();
 		}else if (IsLegalMove(row, col) && isWhiteTurn){
-			board[row][col] = OthelloCell.WHITE;
+			board[col][row] = OthelloCell.WHITE;
 			SetTurnBlack();
 		}else{
 			System.out.println("Not a legal move!");
@@ -276,7 +276,6 @@ public class OthelloBoard {
 		return foundFlank;
 	}
 	
-	
 	@SuppressWarnings("finally")
 	public boolean HasAdjacent(int row, int col){
 		boolean hasAdj = false;
@@ -326,6 +325,11 @@ public class OthelloBoard {
 			System.out.println();
 		}
 		System.out.println("--------------------------");
+		if(isBlackTurn){
+			System.out.println("Black's turn." );
+		} else{
+			System.out.println("White's turn.");
+		}
 	}
 	
 }
