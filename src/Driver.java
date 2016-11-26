@@ -9,11 +9,15 @@ public class Driver {
 		b1.ShowPossibleMoves();
 
 		Scanner kb = new Scanner(System.in);
-	    System.out.print("Which position would you like to enter? ");
-	    int row = kb.nextInt();
-	    int col = kb.nextInt();
-	    
-		b1.PlaceTile(row, col);
+		while (!b1.GameIsOver()){
+			System.out.print("Which position would you like to enter? ");
+	    	int row = kb.nextInt();
+	    	int col = kb.nextInt();
+	  
+			b1.PlaceTile(col, row);
+			b1.ShowPossibleMoves();
+		}
+		
 	}
 
 }

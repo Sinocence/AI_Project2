@@ -13,14 +13,14 @@ public class OthelloBoard {
 			}
 			board[3][3] = OthelloCell.BLACK;
 			board[4][4] = OthelloCell.BLACK;
-			board[3][4] = OthelloCell.WHITE;
+			board[3][4] = OthelloCell.BLACK;
 			board[4][3] = OthelloCell.WHITE;
 			SetTurnBlack();
 	}
 	
 	//returns cell of a board position
 	public OthelloCell GetCell(int row, int col){
-		return board[col][row];
+		return board[row][col];
 	}
 	
 	public void SetTurnWhite(){
@@ -47,10 +47,10 @@ public class OthelloBoard {
 	public void PlaceTile(int row, int col){
 	
 		if(IsLegalMove(row, col) && isBlackTurn){
-			board[col][row] = OthelloCell.BLACK;
+			board[row][col] = OthelloCell.BLACK;
 			SetTurnWhite();
 		}else if (IsLegalMove(row, col) && isWhiteTurn){
-			board[col][row] = OthelloCell.WHITE;
+			board[row][col] = OthelloCell.WHITE;
 			SetTurnBlack();
 		}else{
 			System.out.println("Not a legal move!");
